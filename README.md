@@ -7,7 +7,7 @@
   </a>
 </p>
 <h1 align="center">
-  Brevifolia
+ All Shades Of Riya Blog
 </h1>
 
 ## About

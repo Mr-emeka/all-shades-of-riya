@@ -5,8 +5,9 @@ import useSiteMetaData from "../static_queries/useSiteMetadata"
 
 export default function Info() {
   const { infoData } = useSiteMetaData()
+  
   return (
-    <Layout page="info" bgColor={infoData.background_color}>
+    <Layout page="info" bgColor="inherit">
       <section className={infoStyles.info_blurb}>
         <h2>
           <div dangerouslySetInnerHTML={{__html: infoData.description}}></div>
