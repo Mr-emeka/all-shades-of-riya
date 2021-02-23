@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const NewsLetterContainer = styled.div`
-  /* min-width: 640px;
-  height: 313px; */
+  width: 640px;
   background: #ffffff;
   border-top: 10px solid #dd8ea4;
   box-sizing: border-box;

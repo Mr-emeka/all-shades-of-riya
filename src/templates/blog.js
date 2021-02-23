@@ -5,11 +5,12 @@ import useBlogData from "../static_queries/useBlogData";
 import blogTemplateStyles from "../styles/templates/blog.module.scss";
 //this component handles the blur img & fade-ins
 import Img from "gatsby-image";
-// import NewsLetter from "../components/Newsletter";
+import NewsLetter from "../components/Newsletter";
 import Share from "../components/Share";
 
 export default function Blog(props) {
   const data = props.data.markdownRemark;
+  console.log(props.data.markdownRemark.fields.frontmatter);
   const allBlogData = useBlogData();
   const nextSlug = getNextSlug(data.fields.slug);
   function getNextSlug(slug) {
@@ -26,7 +27,6 @@ export default function Blog(props) {
 
   return (
     <Layout>
-      {console.log(data)}
       <article className={blogTemplateStyles.blog}>
         <div className={blogTemplateStyles.blog__info}>
           <h1>{data.frontmatter.title}</h1>
@@ -43,9 +43,9 @@ export default function Blog(props) {
             <img />
             <div>
               <h2>{data.frontmatter.author}</h2>
-              <h3>
+              <p>
                 {data.frontmatter.date}. {data.frontmatter.minute_read} min read
-              </h3>
+              </p>
             </div>
           </div>
           <Share Text={false} />
@@ -54,7 +54,22 @@ export default function Blog(props) {
           className={blogTemplateStyles.blog__body}
           dangerouslySetInnerHTML={{ __html: data.html }}
         ></div>
+        <div className={blogTemplateStyles.blog__shareOpt}>
+          <Share Text={true} />
+        </div>
         <div className={blogTemplateStyles.blog__footer}>
+          <div className="d-flex justify-content-between">
+            <img />
+            <div>
+              <h2>{data.frontmatter.author}</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+                doloremque iure, quae eum, delectus reprehenderit repudiandae
+                nemo quam odit rem ut ratione fuga corporis quasi cupiditate
+                possimus voluptatum quis?
+              </p>
+            </div>
+          </div>
           <Link
             to={`/blog/${nextSlug}`}
             className={blogTemplateStyles.footer__next}
@@ -72,10 +87,12 @@ export default function Blog(props) {
           </Link>
         </div>
       </article>
-      <hr/>
-      <div>
-
-
+      <hr className={blogTemplateStyles.blog__hr} />
+      <div className={blogTemplateStyles.blog__more}>
+        <div>
+          <h3>What to read next</h3>
+        </div>
+        <NewsLetter />
       </div>
     </Layout>
   );
@@ -93,6 +110,7 @@ export const getPostData = graphql`
         title
         author
         date(formatString: "MMMM Do, YYYY")
+        minute_read
         hero_image {
           childImageSharp {
             fluid(maxWidth: 1500) {
