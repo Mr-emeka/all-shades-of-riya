@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby";
 
 export default function useBlogData() {
   const data = useStaticQuery(graphql`
@@ -14,7 +14,7 @@ export default function useBlogData() {
               minute_read
               hero_image {
                 childImageSharp {
-                  fluid( maxWidth: 800 ) {
+                  fluid(maxWidth: 800) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -28,6 +28,6 @@ export default function useBlogData() {
         }
       }
     }
-  `)
-  return data.allMarkdownRemark.edges
+  `);
+  return data.allMarkdownRemark.edges;
 }

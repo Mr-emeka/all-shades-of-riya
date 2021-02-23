@@ -5,7 +5,7 @@ import useBlogData from "../static_queries/useBlogData";
 import blogTemplateStyles from "../styles/templates/blog.module.scss";
 //this component handles the blur img & fade-ins
 import Img from "gatsby-image";
-import NewsLetter from "../components/Newsletter";
+// import NewsLetter from "../components/Newsletter";
 import Share from "../components/Share";
 
 export default function Blog(props) {
@@ -26,7 +26,7 @@ export default function Blog(props) {
 
   return (
     <Layout>
-      {console.log(data.frontmatter)}
+      {console.log(data)}
       <article className={blogTemplateStyles.blog}>
         <div className={blogTemplateStyles.blog__info}>
           <h1>{data.frontmatter.title}</h1>
