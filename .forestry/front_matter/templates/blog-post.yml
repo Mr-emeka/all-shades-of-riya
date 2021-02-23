@@ -1,7 +1,7 @@
 ---
 label: Blog Post
 hide_body: false
-display_field: minute_read
+display_field: title
 fields:
 - type: text
   name: title
