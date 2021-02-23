@@ -36,17 +36,11 @@ fields:
   description: Enter hero image for blog post here
   default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
 - name: minute_read
-  type: number
-  description: How many minutes/minute read?
-  default: 0
-  required: true
+  type: text
   config:
-    min: 
-    max: 
-    step: 
+    required: false
   label: minute_read
-  showOnly:
-    value: Robert Thoreau
+  description: How many minutes read is this blog?
 pages:
 - content/posts/an-essay-on-walking.md
 - content/posts/ne-te-quaesiveris-extra.md
