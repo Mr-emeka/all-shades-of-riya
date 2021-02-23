@@ -1,5 +1,8 @@
-const config = require("./config.json")
-const infoData = require("./content/data/info.json")
+const config = require("./config.json");
+const infoData = require("./content/data/info.json");
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+})
 
 module.exports = {
   //this makes the site config available to forestry cms
@@ -10,7 +13,7 @@ module.exports = {
     about: config.about,
     contact: config.contact,
     primaryColor: config.primary_color,
-    infoData: infoData
+    infoData: infoData,
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -28,8 +31,8 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/posts`
-      }
+        path: `${__dirname}/content/posts`,
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -46,10 +49,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-sharp", 
+      resolve: "gatsby-plugin-sharp",
       options: {
-        defaultQuality: 75
-      }
+        defaultQuality: 75,
+      },
     },
     `gatsby-transformer-sharp`,
     {
@@ -68,5 +71,19 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint: process.env.MAILCHIMP_ENDPOINT
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /image/
+        }
+      }
+    },
   ],
-}
+};

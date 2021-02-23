@@ -1,7 +1,6 @@
-
-import React from "react"
-import styled from "styled-components"
-import { Link } from "gatsby"
+import React from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
 
 const NavItem = styled(Link)`
   text-decoration: none;
@@ -20,13 +19,13 @@ const NavItem = styled(Link)`
     width: 0%;
     content: ".";
     color: transparent;
-    background: goldenrod;
+    background: #DD8EA4;
     height: 1px;
     transition: all 0.4s ease-in;
   }
 
   :hover {
-    color: goldenrod;
+    color: #DD8EA4;
     ::after {
       width: 100%;
     }
@@ -37,14 +36,14 @@ const NavItem = styled(Link)`
     font-size: 1.5rem;
     z-index: 6;
   }
-`
+`;
 const NavbarLinks = () => {
   return (
     <>
       <NavItem to="/">Blog</NavItem>
       <NavItem to="/404">About</NavItem>
     </>
-  )
-}
+  );
+};
 
-export default NavbarLinks
+export default NavbarLinks;

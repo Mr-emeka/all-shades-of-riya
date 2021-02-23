@@ -14,7 +14,7 @@ export default function Layout(props) {
         <meta name="description" content={description} />
       </Helmet>
       <Header />
-      <div className="container">{props.children}</div>
+      <div>{props.children}</div>
       <Footer />
     </section>
   )
