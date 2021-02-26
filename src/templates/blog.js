@@ -81,9 +81,7 @@ export default function Blog(props) {
               <h2>{data.frontmatter.author}</h2>
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-                doloremque iure, quae eum, delectus reprehenderit repudiandae
-                nemo quam odit rem ut ratione fuga corporis quasi cupiditate
-                possimus voluptatum quis?
+                doloremque iure.
               </p>
             </div>
           </div>
