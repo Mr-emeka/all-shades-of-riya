@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&display=swap');
-@import './variables';
-@import './mixins';
+@import url("https://fonts.googleapis.com/css?family=Work+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import "./variables";
+@import "./mixins";
 
 body {
-  font-family: "Work Sans","Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Dancing Script", cursive;
   overflow-x: hidden;
-  color:$secondary;
+  color: $secondary;
   font-size: 16px;
-  background:$primary;
+  background: $primary;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 
 a:hover {
-  transition: opacity .2s ease;
-  opacity: .5;
+  transition: opacity 0.2s ease;
+  opacity: 0.5;
   text-decoration-color: inherit;
 }
 ul {
@@ -29,11 +29,18 @@ ul {
 
 //TYPOGRAPHY-------------------------------------
 
-h1, h2, h3, h4, h5, h6, p {
-  font-family: "Work Sans","Helvetica Neue","Poppins", Helvetica, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: 'Lora', serif;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 500;
 }
 
@@ -45,21 +52,21 @@ h1 {
 
 h2 {
   font-size: 1.7rem;
-  letter-spacing: -.75px;
+  letter-spacing: -0.75px;
   line-height: 1.2;
 }
 
 h3 {
   font-size: 1.2rem;
-  letter-spacing: -.5px;
+  letter-spacing: -0.5px;
   line-height: 1.1875;
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-weight: normal;
 }
 
 p {
   font-size: 1.2rem;
-  letter-spacing: -.5px;
+  letter-spacing: -0.5px;
   line-height: 1.5;
   color: #464646;
 }
@@ -72,24 +79,48 @@ p {
   min-height: 100%;
 }
 
-@media (min-width: 1280px) {
+.newsletter {
+  &__input {
+    border: 1px solid #f3e9eb;
+    padding: 0.4em 0.3em;
+    font-size: 1em;
+    font-weight: 200;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__btn {
+    background-color: $primaryDark;
+    color: #fff;
+    padding: 0.4em 1em;
+    border: 1px solid #f3e9eb;
+    outline: none;
+    border-radius: 0 5px 5px 0;
+  }
+  &__message {
+    font-size: 1em;
+    font-weight: 200;
+    margin-top: 1em;
+  }
+}
 
+@media (min-width: 1280px) {
   h1 {
     font-size: 2rem;
     letter-spacing: -1px;
     line-height: 1.1875;
   }
-  
+
   h2 {
     font-size: 1.5rem;
-    letter-spacing: -.75px;
+    letter-spacing: -0.75px;
     line-height: 1.1667;
   }
-  
+
   h3 {
-    letter-spacing: -.5px;
+    letter-spacing: -0.5px;
     line-height: 1.1875;
-    color: #A0A0A0;
+    color: #a0a0a0;
     font-weight: normal;
   }
 

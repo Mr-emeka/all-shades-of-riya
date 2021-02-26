@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
+import addToMailchimp from "gatsby-plugin-mailchimp";
 import { graphql, Link } from "gatsby";
 import useBlogData from "../static_queries/useBlogData";
 import blogTemplateStyles from "../styles/templates/blog.module.scss";
@@ -9,9 +10,13 @@ import NewsLetter from "../components/Newsletter";
 import Share from "../components/Share";
 
 export default function Blog(props) {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  // const [setResult] = useState("");
   const data = props.data.markdownRemark;
-  console.log(props.data.markdownRemark.fields.frontmatter);
+
   const allBlogData = useBlogData();
+
   const nextSlug = getNextSlug(data.fields.slug);
   function getNextSlug(slug) {
     const allSlugs = allBlogData.map((blog) => {
@@ -24,6 +29,20 @@ export default function Blog(props) {
       return allSlugs[0];
     }
   }
+  const handleChange = (value, name) => {
+    setEmail(value);
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    const { msg } = await addToMailchimp(email);
+    setMessage(msg);
+    // setResult(result);
+    setEmail("");
+    setTimeout(() => setMessage(""), 5000);
+  };
+  let re = /\S+@\S+\.\S+/;
+  const isDisabled = () => re.test(email);
 
   return (
     <Layout>
@@ -40,7 +59,6 @@ export default function Blog(props) {
         <hr />
         <div className={blogTemplateStyles.blog__share}>
           <div className="d-flex">
-            <img />
             <div>
               <h2>{data.frontmatter.author}</h2>
               <p>
@@ -59,7 +77,6 @@ export default function Blog(props) {
         </div>
         <div className={blogTemplateStyles.blog__footer}>
           <div className="d-flex justify-content-between">
-            <img />
             <div>
               <h2>{data.frontmatter.author}</h2>
               <p>
@@ -90,9 +107,16 @@ export default function Blog(props) {
       <hr className={blogTemplateStyles.blog__hr} />
       <div className={blogTemplateStyles.blog__more}>
         <div>
-          <h3>What to read next</h3>
+          <h1>What to read next</h1>
         </div>
-        <NewsLetter />
+        <div></div>
+        <NewsLetter
+          callback={handleChange}
+          text={email}
+          message={message}
+          handleClick={handleClick}
+          disabled={isDisabled()}
+        />
       </div>
     </Layout>
   );
