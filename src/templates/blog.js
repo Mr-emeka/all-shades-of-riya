@@ -8,6 +8,7 @@ import blogTemplateStyles from "../styles/templates/blog.module.scss";
 import Img from "gatsby-image";
 import NewsLetter from "../components/Newsletter";
 import Share from "../components/Share";
+import BlogList from "./more";
 
 export default function Blog(props) {
   const [email, setEmail] = useState("");
@@ -78,11 +79,7 @@ export default function Blog(props) {
         <div className={blogTemplateStyles.blog__footer}>
           <div className="d-flex justify-content-between">
             <div>
-              <h2>{data.frontmatter.author}</h2>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-                doloremque iure.
-              </p>
+              <h2>By: {data.frontmatter.author}</h2>
             </div>
           </div>
           <Link
@@ -107,7 +104,7 @@ export default function Blog(props) {
         <div>
           <h1>What to read next</h1>
         </div>
-        <div></div>
+        <BlogList title={data.frontmatter.title} />
         <NewsLetter
           callback={handleChange}
           text={email}

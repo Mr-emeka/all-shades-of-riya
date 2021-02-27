@@ -61,7 +61,7 @@ const Footer = () => {
     <FooterSection>
       <div>
         <FooterText>
-          <h3>All Shades Of Riya</h3>
+          <h4>All Shades Of Riya</h4>
           <p dangerouslySetInnerHTML={{ __html: infoData.description }}></p>
           {/* <div dangerouslySetInnerHTML={{__html: infoData.cta}}></div> */}
         </FooterText>
