@@ -3,7 +3,7 @@ date: 2019-08-08T22:42:09.000+00:00
 title: Sunflower Sutra
 author: Chiamaka Glory
 hero_image: "../images/adrien-olichon--aOsCcTJXWY-unsplash.jpg"
-minute_read: 2
+minute_read: "3"
 
 ---
 I walked on the banks of the tincan banana dock and sat down under the huge shade of a Southern Pacific locomotive to look for the sunset over the box house hills and cry.
