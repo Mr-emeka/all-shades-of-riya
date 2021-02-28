@@ -4,10 +4,23 @@ import shareStyles from "../../styles/components/share.module.scss";
 
 export default function Share({ title }) {
   const isSmallScreen = useMediaQuery("(max-width: 989px)");
+  
+
+  let url =
+    process.env.NODE_ENV === "development"
+      ? `https://loving-hopper-39cf92.netlify.app/blog/${title}`
+      : `https://allshadesofriya.com/blog/${title}`;
+
   return (
     <div className={shareStyles.share}>
       <div>
-        <a href="http://twitter.com/home?status=MESSAGE+URL" target="blank">
+        <a
+          href={`http://twitter.com/intent/tweet?url=${url.replace(
+            / /g,
+            "-"
+          )}&via="All Shade of Riya"`}
+          target="blank"
+        >
           <svg
             width="20"
             height="16"
@@ -26,7 +39,7 @@ export default function Share({ title }) {
       </div>
       <div>
         <a
-          href="http://www.facebook.com/sharer.php?u=ENTER%20URL=TITLE"
+          href={`http://www.facebook.com/sharer.php?u=${url}&t='All Shades of Riya'`}
           target="blank"
         >
           <svg
@@ -47,7 +60,7 @@ export default function Share({ title }) {
       {isSmallScreen && (
         <div>
           <a
-            href={`whatsapp://send?text=${title}`}
+            href={`whatsapp://send?text=${url}`}
             data-action="share/whatsapp/share"
             target="_blank"
           >

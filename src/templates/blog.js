@@ -45,6 +45,8 @@ export default function Blog(props) {
   let re = /\S+@\S+\.\S+/;
   const isDisabled = () => re.test(email);
 
+console.log(process.env.NODE_ENV)
+console.log(data)
   return (
     <Layout>
       <article className={blogTemplateStyles.blog}>
@@ -67,7 +69,7 @@ export default function Blog(props) {
               </p>
             </div>
           </div>
-          <Share Text={false} />
+          <Share Text={false} title={data.fields.slug}/>
         </div>
         <div
           className={blogTemplateStyles.blog__body}
