@@ -57,6 +57,7 @@ console.log(data)
           <Img
             fluid={data.frontmatter.hero_image.childImageSharp.fluid}
             alt={data.frontmatter.title}
+            loading="lazy"
           />
         </figure>
         <hr />

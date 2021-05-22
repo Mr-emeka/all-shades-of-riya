@@ -18,6 +18,7 @@ export default function BlogList({ title }) {
                 {/* <li className={blogListStyles.li} key={blog.node.fields.slug}> */}
                 <div className={blogListStyles.list__hero}>
                   <Img
+                  loading="lazy"
                     fluid={
                       blog.node.frontmatter.hero_image.childImageSharp.fluid
                     }

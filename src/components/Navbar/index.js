@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import NavbarLinks from "./Links";
-import Logo from "./Logo";
 
 const Navigation = styled.nav`
-  height: 14vh;
+  height: 10vh;
   display: flex;
-  background-color: #fff;
+  position: fixed;
+  background-color: #000000;
   position: relative;
   justify-content: space-between;
   text-transform: uppercase;
-  border-bottom: 2px solid #33333320;
+  box-shadow: 0px 1px 5px rgb(190 190 190 / 46%);
+  -webkit-box-shadow: 0px 1px 5px rgb(190 190 190 / 46%);
+  -moz-box-shadow: 0px 1px 5px rgba(190, 190, 190, 0.46);
   margin: 0 auto 3em auto;
   padding: 0 5vw;
   z-index: 2;
@@ -18,7 +20,6 @@ const Navigation = styled.nav`
 
   @media (max-width: 768px) {
     position: fixed;
-    /* position: sticky; */
     height: 8vh;
     top: 0;
     left: 0;
@@ -50,7 +51,7 @@ const Navbox = styled.div`
     width: 100%;
     justify-content: flex-start;
     padding-top: 10vh;
-    background-color: #fff;
+    background-color: #000;
     transition: all 0.3s ease-in;
     top: 8vh;
     left: ${(props) => (props.open ? "-100%" : "0")};
@@ -58,7 +59,7 @@ const Navbox = styled.div`
 `;
 
 const Hamburger = styled.div`
-  background-color: #111;
+  background-color: #fff;
   width: 20px;
   height: 2px;
   transition: all 0.3s linear;
@@ -70,7 +71,7 @@ const Hamburger = styled.div`
   ::after {
     width: 20px;
     height: 2px;
-    background-color: #111;
+    background-color: #fff;;
     content: "";
     position: absolute;
     transition: all 0.3s linear;
@@ -93,7 +94,7 @@ const Navbar = () => {
 
   return (
     <Navigation>
-      <Logo />
+      {/* Logo can go in here */}
       <Toggle
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}

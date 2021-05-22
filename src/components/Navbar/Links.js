@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 const NavItem = styled(Link)`
   text-decoration: none;
-  color: #111;
+  color: #fff;
   display: inline-block;
   white-space: nowrap;
   margin: 0 1vw;
@@ -19,13 +19,13 @@ const NavItem = styled(Link)`
     width: 0%;
     content: ".";
     color: transparent;
-    background: #DD8EA4;
+    background: #dd8ea4;
     height: 1px;
     transition: all 0.4s ease-in;
   }
 
   :hover {
-    color: #DD8EA4;
+    color: #dd8ea4;
     ::after {
       width: 100%;
     }
@@ -40,8 +40,9 @@ const NavItem = styled(Link)`
 const NavbarLinks = () => {
   return (
     <>
-      <NavItem to="/">Blog</NavItem>
+      <NavItem to="/">Home</NavItem>
       <NavItem to="/about">About</NavItem>
+      <NavItem to="/contact-me">Contact me</NavItem>
     </>
   );
 };
