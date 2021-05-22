@@ -6,6 +6,9 @@ webhook_url:
 sections:
 - type: heading
   label: Content
+- type: document
+  path: content/data/genre.yaml
+  label: Genre
 - type: directory
   path: content/posts
   label: Blog Posts
