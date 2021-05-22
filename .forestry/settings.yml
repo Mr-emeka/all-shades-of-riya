@@ -4,6 +4,10 @@ auto_deploy: false
 admin_path: static/admin
 webhook_url: 
 sections:
+- type: document
+  path: content/data/genre.yaml
+  label: Genre
+  match: "**/*"
 - type: heading
   label: Content
 - type: directory
