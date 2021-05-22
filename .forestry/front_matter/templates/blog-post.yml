@@ -46,6 +46,18 @@ fields:
     min: 
     max: 
     step: 
+- name: genre
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: genre-a98d9b5b-4186-4b8f-8a12-a9ba7c49540a
+      file: 
+      path: 
+  label: Genre
 pages:
 - content/posts/an-essay-on-walking.md
 - content/posts/ne-te-quaesiveris-extra.md
