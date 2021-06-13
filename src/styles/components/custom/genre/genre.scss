@@ -1,0 +1,15 @@
+.genre {
+    display: flex;
+    flex-direction: column;
+    &__item {
+        border: 1px solid $borderColor;
+        padding: 10px;
+        cursor: pointer;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+        &:hover {
+            background: $primaryDark;
+            color: $primary;
+        }
+    }
+}

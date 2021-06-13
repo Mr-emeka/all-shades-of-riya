@@ -4,13 +4,14 @@ import BlogList from "../components/BlogList";
 import homeStyles from "../styles/pages/index.module.scss";
 import Featured from "../components/Featured";
 import Img from "gatsby-image";
-
 import { graphql, useStaticQuery } from "gatsby";
 
-function useImage() {
+import ListOfGenre from "../components/custom/Genre";
+
+export default function IndexPage() {
   const data = useStaticQuery(graphql`
-    query MyQuery {
-      file(relativePath: { eq: "gatsby-icon.png" }) {
+    query {
+      image: file(relativePath: { eq: "gatsby-icon.png" }) {
         childImageSharp {
           fluid {
             src
@@ -20,14 +21,11 @@ function useImage() {
           }
         }
       }
+      genres: dataYaml {
+        genre
+      }
     }
   `);
-  return data;
-}
-
-export default function IndexPage() {
-  const data = useImage();
-
   return (
     <Layout page="home" bgColor="inherit">
       <section className={homeStyles.home__header}>
@@ -47,12 +45,13 @@ export default function IndexPage() {
 }
 
 const SideContent = ({ data }) => {
+  console.log(data);
   return (
     <aside className="aside flex-column">
       <div>Hello, I am Amaka</div>
       <div className="aside__profile flex-column">
         <Img
-          fluid={data.file.childImageSharp.fluid}
+          fluid={data.image.childImageSharp.fluid}
           alt="chiamaka glory founder all shades of riya"
         />
         <p>
@@ -62,6 +61,7 @@ const SideContent = ({ data }) => {
           loves to binge watch rom coms
         </p>
       </div>
+      <ListOfGenre genres={data.genres.genre} />
     </aside>
   );
 };

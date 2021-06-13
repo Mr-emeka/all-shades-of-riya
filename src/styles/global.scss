@@ -3,6 +3,9 @@
 @import "./variables";
 @import "./mixins";
 
+
+@import "./components/custom/genre/genre";
+
 body {
   font-family: "Poppins", cursive;
   color: $secondary;

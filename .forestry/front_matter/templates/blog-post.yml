@@ -53,10 +53,10 @@ fields:
     required: false
     options: []
     source:
-      type: pages
-      section: genre-a98d9b5b-4186-4b8f-8a12-a9ba7c49540a
-      file: 
-      path: 
+      type: documents
+      section: genre
+       file: content/data/genre.yaml
+      path: genre
   label: genre
 pages:
 - content/posts/an-essay-on-walking.md

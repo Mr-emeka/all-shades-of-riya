@@ -1,11 +1,11 @@
-import React from "react"
-import Header from "./Header"
-import Footer from "./Footer"
-import Helmet from "react-helmet"
-import useSiteMetadata from "../static_queries/useSiteMetadata"
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Helmet from "react-helmet";
+import useSiteMetadata from "../static_queries/useSiteMetadata";
 
 export default function Layout(props) {
-  const { title, description } = useSiteMetadata()
+  const { title, description } = useSiteMetadata();
   return (
     <section>
       <Helmet>
@@ -17,5 +17,5 @@ export default function Layout(props) {
       <div>{props.children}</div>
       <Footer />
     </section>
-  )
+  );
 }
