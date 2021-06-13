@@ -11,13 +11,23 @@ export default function BlogList() {
       <div>
         {blogData
           .filter((blog) => blog.node.frontmatter.title !== "")
-          .map((blog) => {
+          .map((blog, index) => {
             return (
-              <Link to={`/blog/${blog.node.fields.slug}`} key={blog.node.id}>
-                {/* <li className={blogListStyles.li} key={blog.node.fields.slug}> */}
-                  <div className={blogListStyles.list__hero}>
+              <article className={blogListStyles.list__content} key={index}>
+                <div className={blogListStyles.list__header}>
+                  <h2>
+                    <Link
+                      to={`/blog/${blog.node.fields.slug}`}
+                      key={blog.node.id}
+                    >
+                      {blog.node.frontmatter.title}
+                    </Link>
+                  </h2>
+                  <p>"Lifestyle"</p>
+                </div>
+                <div className={blogListStyles.list__hero}>
                   <Img
-                  loading="lazy"
+                    loading="lazy"
                     fluid={
                       blog.node.frontmatter.hero_image.childImageSharp.fluid
                     }
@@ -25,20 +35,17 @@ export default function BlogList() {
                   />
                 </div>
                 <div className={blogListStyles.list__info}>
-                  <h2>{blog.node.frontmatter.title}</h2>
-                  <span>{blog.node.frontmatter.date}</span>
                   <p>{blog.node.excerpt}</p>
+                  <div className={blogListStyles.list__actionArea}>
+                    <button>Read More</button>
+                    <div>Share</div>
+                  </div>
                 </div>
-                {/* </li> */}
-              </Link>
+              </article>
             );
           })}
       </div>
     );
   }
-  return (
-    <section>
-      <ul className={blogListStyles.list}>{renderBlogData()}</ul>
-    </section>
-  );
+  return <div className={blogListStyles.list}>{renderBlogData()}</div>;
 }

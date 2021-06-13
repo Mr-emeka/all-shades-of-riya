@@ -1,0 +1,45 @@
+@import "../variables";
+@import "../mixins";
+
+.featured {
+    &__carousel {
+        position: relative;
+        width: 100%;
+        overflow-x: auto;
+    }
+    &__owl {
+        width: 100%;
+        // display: -webkit-inline-box;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 1fr;
+        grid-gap: 1em;
+        overflow-x: auto;
+
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none;
+    }
+    &__owl::-webkit-scrollbar {
+        width: 0; /* Remove scrollbar space */
+        background: transparent; /* Optional: just make scrollbar invisible */
+    }
+    &__owl > * {
+        width: 500px;
+        @include media-query($medium-down) {
+            width: 100%;
+        }
+
+        // margin-left: em;
+    }
+    &__description {
+        background: #fff;
+        width: 270px;
+        margin: 0 auto;
+        padding: 2em;
+        border-radius: 5px;
+
+        p {
+            font-size: 1em;
+        }
+    }
+}

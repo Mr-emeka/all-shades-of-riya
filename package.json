@@ -16,6 +16,7 @@
     "forestry-preview": "gatsby develop -p 8080 -H 0.0.0.0"
   },
   "dependencies": {
+    "@brainhubeu/react-carousel": "^2.0.3",
     "babel-plugin-styled-components": "^1.12.0",
     "bootstrap": "^4.6.0",
     "dotenv": "^8.2.0",

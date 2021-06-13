@@ -7,14 +7,13 @@ const Navigation = styled.nav`
   display: flex;
   position: fixed;
   background-color: #000000;
-  position: relative;
   justify-content: space-between;
   text-transform: uppercase;
   box-shadow: 0px 1px 5px rgb(190 190 190 / 46%);
   -webkit-box-shadow: 0px 1px 5px rgb(190 190 190 / 46%);
   -moz-box-shadow: 0px 1px 5px rgba(190, 190, 190, 0.46);
-  margin: 0 auto 3em auto;
   padding: 0 5vw;
+  width: 100%;
   z-index: 2;
   align-self: center;
 
@@ -71,7 +70,7 @@ const Hamburger = styled.div`
   ::after {
     width: 20px;
     height: 2px;
-    background-color: #fff;;
+    background-color: #fff;
     content: "";
     position: absolute;
     transition: all 0.3s linear;

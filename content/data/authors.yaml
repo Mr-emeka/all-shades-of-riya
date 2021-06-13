@@ -1,2 +1,3 @@
 authors:
-- Chiamaka Glory
+  - authorName: Chiamaka Glory
+    authorImg: "../images/gatsby-icon.png"

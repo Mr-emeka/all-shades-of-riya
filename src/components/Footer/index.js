@@ -10,7 +10,7 @@ const FooterSection = styled.footer`
   margin-top:2em;
   align-self: center;
   text-align: center;
-  background: #31383f;
+  background: #DD8EA4;
   color: #fff !important;
 `;
 const LinkSection = styled.div`
