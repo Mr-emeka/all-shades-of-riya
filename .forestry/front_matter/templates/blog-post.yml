@@ -48,7 +48,7 @@ fields:
     step: 
 - name: genre
   type: select
-  default: []
+  default: content/data/genre.yaml
   config:
     required: false
     options: []
@@ -57,7 +57,7 @@ fields:
       section: genre-a98d9b5b-4186-4b8f-8a12-a9ba7c49540a
       file: 
       path: 
-  label: Genre
+  label: genre
 pages:
 - content/posts/an-essay-on-walking.md
 - content/posts/ne-te-quaesiveris-extra.md
