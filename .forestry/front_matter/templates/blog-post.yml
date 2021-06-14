@@ -48,9 +48,9 @@ fields:
     step: 
 - name: genre
   type: select
-  default: content/data/genre.yaml
+  default: genre
   config:
-    required: false
+    required: true
     options: []
     source:
       type: documents
