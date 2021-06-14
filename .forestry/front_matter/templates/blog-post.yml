@@ -56,8 +56,8 @@ fields:
     required: false
     options: []
     source:
-      type: simple
-      section: genres
+      type: documents
+      section: ''
       file: content/data/genres.yaml
       path: 
   label: genre
