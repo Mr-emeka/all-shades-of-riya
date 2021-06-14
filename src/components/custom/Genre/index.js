@@ -4,9 +4,10 @@ const ListOfGenre = ({ genres }) => {
   return (
     <div className="genre">
       {console.log(genres)}
-      {genres.map((genre,index)=>{
-      return <div className="genre__item">{genre}</div>
-    })}
+      {genres.length >= 1 &&
+        genres.map((genre, index) => {
+          return <div className="genre__item">{genre}</div>;
+        })}
     </div>
   );
 };
