@@ -11,6 +11,7 @@ export default function useBlogData() {
               date(formatString: "MMMM Do, YYYY")
               author
               title
+              genre
               minute_read
               hero_image {
                 childImageSharp {
