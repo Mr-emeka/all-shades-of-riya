@@ -13,10 +13,10 @@ fields:
     required: true
     options: []
     source:
-      type: documents
+      type: pages
       section: author-list
       file: content/data/authors.yaml
-      path: authors
+      path: ''
   label: author
   description: Enter author of post
 - name: date
@@ -53,7 +53,7 @@ fields:
     required: false
     options: []
     source:
-      type: documents
+      type: pages
       section: genres
       file: content/data/genres.yaml
       path: 
