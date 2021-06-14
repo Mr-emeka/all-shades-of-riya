@@ -8,17 +8,20 @@ fields:
   label: title
 - name: author
   type: select
-  default: ''
+  default: authors
   config:
     required: true
     options: []
     source:
-      type: pages
-      section: author-list
+      type: documents
+      section: ''
       file: content/data/authors.yaml
       path: ''
   label: author
   description: Enter author of post
+  showOnly:
+    field: author
+    value: content/data/authors.yaml
 - name: date
   type: datetime
   label: date
@@ -54,7 +57,7 @@ fields:
     options: []
     source:
       type: pages
-      section: genres
+      section: ''
       file: content/data/genres.yaml
       path: 
   label: genre
