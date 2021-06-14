@@ -59,7 +59,6 @@ fields:
       path: ''
   label: genre
   showOnly:
-    field: genre
     value: genre
 pages:
 - content/posts/an-essay-on-walking.md
