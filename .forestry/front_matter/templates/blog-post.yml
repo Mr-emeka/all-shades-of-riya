@@ -6,22 +6,6 @@ fields:
 - type: text
   name: title
   label: title
-- name: author
-  type: select
-  default: authors
-  config:
-    required: true
-    options: []
-    source:
-      type: documents
-      section: ''
-      file: content/data/authors.yaml
-      path: ''
-  label: author
-  description: Enter author of post
-  showOnly:
-    field: author
-    value: content/data/authors.yaml
 - name: date
   type: datetime
   label: date
@@ -49,7 +33,7 @@ fields:
     min: 
     max: 
     step: 
-- name: genre
+- name: genres
   type: select
   default: genres
   config:
@@ -60,7 +44,19 @@ fields:
       section: genres
       file: content/data/genres.yaml
       path: genres
-  label: genre
+  label: genres
+- name: author
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: documents
+      section: 
+      file: content/data/authors.yaml
+      path: 
+  label: author
 pages:
 - content/posts/an-essay-on-walking.md
 - content/posts/ne-te-quaesiveris-extra.md
