@@ -57,7 +57,7 @@ fields:
     options: []
     source:
       type: documents
-      section: ''
+      section: genres
       file: content/data/genres.yaml
       path: genres
   label: genre
