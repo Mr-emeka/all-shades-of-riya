@@ -3,6 +3,10 @@ import { Link } from "gatsby";
 import useBlogData from "../static_queries/useBlogData";
 import blogListStyles from "../styles/components/bloglist.module.scss";
 import Img from "gatsby-image";
+import Button from '../components/custom/button'
+
+
+
 
 export default function BlogList() {
   const blogData = useBlogData();
@@ -37,7 +41,7 @@ export default function BlogList() {
                 <div className={blogListStyles.list__info}>
                   <p>{blog.node.excerpt}</p>
                   <div className={blogListStyles.list__actionArea}>
-                    <button>Read More</button>
+                    <Button style={{background:"#000",color:"#fff", textTransform:'uppercase'}}>Read More</Button>
                     <div>Share</div>
                   </div>
                 </div>

@@ -19,6 +19,7 @@ export default function Blog(props) {
   const allBlogData = useBlogData();
 
   const nextSlug = getNextSlug(data.fields.slug);
+  
   function getNextSlug(slug) {
     const allSlugs = allBlogData.map((blog) => {
       return blog.node.fields.slug;
@@ -45,8 +46,8 @@ export default function Blog(props) {
   let re = /\S+@\S+\.\S+/;
   const isDisabled = () => re.test(email);
 
-console.log(process.env.NODE_ENV)
-console.log(data)
+  console.log(process.env.NODE_ENV);
+  console.log(data);
   return (
     <Layout>
       <article className={blogTemplateStyles.blog}>
@@ -70,7 +71,7 @@ console.log(data)
               </p>
             </div>
           </div>
-          <Share Text={false} title={data.fields.slug}/>
+          <Share Text={false} title={data.fields.slug} />
         </div>
         <div
           className={blogTemplateStyles.blog__body}
