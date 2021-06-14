@@ -57,6 +57,11 @@ fields:
       file: content/data/authors.yaml
       path: authors
   label: author
+- name: tags
+  type: tag_list
+  default:
+  - Educative
+  label: tags
 pages:
 - content/posts/an-essay-on-walking.md
 - content/posts/ne-te-quaesiveris-extra.md
