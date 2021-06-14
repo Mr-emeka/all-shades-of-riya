@@ -22,6 +22,9 @@
         padding: 32.5px 30px 32.5px 30px;
         background-color: #fff;
         transform: translateY(-200px);
+        @include media-query($medium-down) {
+            padding: 1em;
+        }
     }
     &__blogArea {
         display: grid;
@@ -34,6 +37,7 @@
         margin-top: -180px;
         @include media-query($medium-down) {
             display: block;
+            padding: 1em;
         }
     }
 }

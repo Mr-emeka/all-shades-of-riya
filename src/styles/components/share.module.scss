@@ -30,6 +30,9 @@
 
 .shareArea {
     display: flex;
+    @include media-query($medium-down) {
+        margin: 1em 0 0 0;
+    }
     div {
         margin: 0 10px;
     }

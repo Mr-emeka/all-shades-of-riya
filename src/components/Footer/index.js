@@ -16,7 +16,7 @@ const FooterSection = styled.footer`
 const LinkSection = styled.div`
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   padding: 0 !important;
   a:hover {
     text-decoration: none;
@@ -24,14 +24,6 @@ const LinkSection = styled.div`
   }
   a {
     margin-right: 1em;
-  }
-  @media (max-width: 786px) {
-    flex-direction: column;
-    margin-bottom: 1em;
-    a {
-      margin-right: 0;
-      margin-bottom: 2em;
-    }
   }
 `;
 const FooterText = styled.div`
@@ -44,7 +36,7 @@ const FooterText = styled.div`
     font-size: 1.5em;
   }
   div {
-    width: 80%;
+    width: 100%;
     padding: 0 !important;
     margin-top: 1em;
     p {
@@ -68,16 +60,16 @@ const Footer = () => {
           <h4>All Shades Of Riya</h4>
           <div dangerouslySetInnerHTML={{ __html: infoData.description }}></div>
         </FooterText>
+      </div>
+      <FooterCopyright>
+        <span>&copy; {new Date().getFullYear()} All Shades Of Riya Co.</span>
+        <span>All rights reserved.</span>
         <LinkSection>
           <a href={`https://twitter.com/${infoData.contact.twitter_handle}`}>
             Twitter
           </a>
           <a href={`mailto:${infoData.contact.email}`}>Email</a>
         </LinkSection>
-      </div>
-      <FooterCopyright>
-        <span>&copy; {new Date().getFullYear()} All Shades Of Riya Co.</span>
-        <span>All rights reserved.</span>
       </FooterCopyright>
     </FooterSection>
   );
