@@ -1,11 +1,11 @@
 ---
 date: 2019-07-22T22:44:38.000+00:00
 title: Song of Myself
-author: ''
+author: Chiamaka Glory
 hero_image: "../images/ren-ran-bBiuSdck8tU-unsplash.jpg"
 minute_read: 1
 genre: Romance
-genres: ''
+genres: Romance
 tags:
 - educative
 - tabs
