@@ -7,8 +7,9 @@ sections:
 - type: heading
   label: Content
 - type: document
-  path: content/data/genre.yaml
-  label: Genre
+  path: content/data/genres.yaml
+  label: Genres
+  match: "**/*"
 - type: directory
   path: content/posts
   label: Blog Posts
