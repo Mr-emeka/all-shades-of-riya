@@ -59,7 +59,7 @@ fields:
       type: documents
       section: ''
       file: content/data/genres.yaml
-      path: 
+      path: genres
   label: genre
 pages:
 - content/posts/an-essay-on-walking.md
