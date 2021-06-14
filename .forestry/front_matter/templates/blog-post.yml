@@ -56,7 +56,7 @@ fields:
     required: false
     options: []
     source:
-      type: pages
+      type: simple
       section: genres
       file: content/data/genres.yaml
       path: 
