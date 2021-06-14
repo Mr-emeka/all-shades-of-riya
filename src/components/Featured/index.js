@@ -1,8 +1,9 @@
 import React from "react";
 import homeStyles from "../../styles/components/featured.module.scss";
 import styled from "styled-components";
+import Button from "../custom/button";
 
-const Featured = () => {
+const Featured = ({}) => {
   return (
     <div className={homeStyles.featured__carousel}>
       <div className={homeStyles.featured__owl}>
@@ -33,7 +34,7 @@ const Card = ({
       <div className={homeStyles.featured__description}>
         <h5>THE MOST PRODUCTIVE THING TO DO RIGHT NOW</h5>
         <p>This was going to be a valuable how to be productive post. </p>
-        <button>Read More</button>
+        <a href="">Read More</a>
       </div>
     </BGImage>
   );

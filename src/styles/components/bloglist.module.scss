@@ -1,3 +1,6 @@
+@import "../variables";
+@import "../mixins";
+
 .list {
   &__content {
     border-bottom: 1px solid rgba(34, 34, 34, 0.1);
@@ -16,10 +19,21 @@
   }
   &__info {
     padding: 0.6rem 2rem;
+    @include media-query($medium-down) {
+      padding: 0em;
+    }
+    span {
+      font-size: 0.7em;
+    }
   }
   &__actionArea {
     padding: 0 0 2em 0;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    @include media-query($medium-down) {
+      flex-direction: column;
+    }
   }
   &__hero {
     width: 100%;
@@ -35,6 +49,27 @@
         -webkit-transition: opacity 0.3s ease;
         transition: opacity 0.3s ease;
       }
+    }
+  }
+  &__readMore {
+    div {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 1em;
+      @include media-query($medium-down) {
+        display: block;
+      }
+    }
+  }
+  &__link {
+    &:hover {
+      opacity: 1 !important;
+      text-decoration: none !important;
+      color: inherit;
+    }
+    &:active {
+      text-decoration: none;
+      opacity: 1;
     }
   }
 }

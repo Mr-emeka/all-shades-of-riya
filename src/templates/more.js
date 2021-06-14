@@ -14,23 +14,26 @@ export default function BlogList({ title }) {
           .splice(Math.floor(Math.random() * (blogData.length - 4)), 6)
           .map((blog) => {
             return (
-              <Link to={`/blog/${blog.node.fields.slug}`} key={blog.node.id}>
-                {/* <li className={blogListStyles.li} key={blog.node.fields.slug}> */}
+              <Link
+                className={blogListStyles.list__link}
+                to={`/blog/${blog.node.fields.slug}`}
+                key={blog.node.id}
+              >
                 <div className={blogListStyles.list__hero}>
-                  <Img
-                  loading="lazy"
-                    fluid={
-                      blog.node.frontmatter.hero_image.childImageSharp.fluid
-                    }
-                    alt={blog.node.frontmatter.title}
-                  />
+                  {blog.node.frontmatter.hero_image ? (
+                    <Img
+                      loading="lazy"
+                      fluid={
+                        blog.node.frontmatter.hero_image.childImageSharp.fluid
+                      }
+                      alt={blog.node.frontmatter.title}
+                    />
+                  ) : null}
                 </div>
                 <div className={blogListStyles.list__info}>
-                  <h2>{blog.node.frontmatter.title}</h2>
+                  <h2 className="mb-2">{blog.node.frontmatter.title}</h2>
                   <span>{blog.node.frontmatter.date}</span>
-                  <p>{blog.node.excerpt}</p>
                 </div>
-                {/* </li> */}
               </Link>
             );
           })}
@@ -39,7 +42,7 @@ export default function BlogList({ title }) {
   }
   return (
     <section>
-      <ul className={blogListStyles.list}>{renderBlogData()}</ul>
+      <div className={blogListStyles.list__readMore}>{renderBlogData()}</div>
     </section>
   );
 }

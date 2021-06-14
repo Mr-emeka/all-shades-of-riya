@@ -22,7 +22,7 @@ export default function IndexPage() {
         }
       }
       genres: dataYaml {
-        genre
+        genres
       }
     }
   `);
@@ -44,7 +44,7 @@ export default function IndexPage() {
   );
 }
 
-const SideContent = ({ data }) => {
+export const SideContent = ({ data }) => {
   console.log(data);
   return (
     <aside className="aside flex-column">
@@ -61,7 +61,7 @@ const SideContent = ({ data }) => {
           loves to binge watch rom coms
         </p>
       </div>
-      <ListOfGenre genres={data.genres.genre} />
+      <ListOfGenre genres={data.genres.genres} />
     </aside>
   );
 };

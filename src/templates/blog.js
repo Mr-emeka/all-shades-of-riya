@@ -19,7 +19,7 @@ export default function Blog(props) {
   const allBlogData = useBlogData();
 
   const nextSlug = getNextSlug(data.fields.slug);
-  
+
   function getNextSlug(slug) {
     const allSlugs = allBlogData.map((blog) => {
       return blog.node.fields.slug;
@@ -50,73 +50,87 @@ export default function Blog(props) {
   console.log(data);
   return (
     <Layout>
-      <article className={blogTemplateStyles.blog}>
-        <div className={blogTemplateStyles.blog__info}>
-          <h1>{data.frontmatter.title}</h1>
+      <section className="home__header">
+        <div className="container home__banner">
+          <h1>AllShadesOfRiya</h1>
         </div>
-        <figure className={blogTemplateStyles.blog__hero}>
-          <Img
-            fluid={data.frontmatter.hero_image.childImageSharp.fluid}
-            alt={data.frontmatter.title}
-            loading="lazy"
-          />
-        </figure>
-        <hr />
-        <div className={blogTemplateStyles.blog__share}>
-          <div className="d-flex">
-            <div>
-              <h2>{data.frontmatter.author}</h2>
-              <p>
-                {data.frontmatter.date}. {data.frontmatter.minute_read} min read
-              </p>
+      </section>
+      <section className="home__featuredArea">
+        <div className="home__grid">
+          <div>
+            <article className={blogTemplateStyles.blog}>
+              <figure className={blogTemplateStyles.blog__hero}>
+                {data.frontmatter.hero_image ? (
+                  <Img
+                    loading="lazy"
+                    fluid={data.frontmatter.hero_image.childImageSharp.fluid}
+                    alt={data.frontmatter.title}
+                  />
+                ) : null}
+              </figure>
+              <div className={blogTemplateStyles.blog__info}>
+                <h1>{data.frontmatter.title}</h1>
+              </div>
+
+              <div
+                className={blogTemplateStyles.blog__body}
+                dangerouslySetInnerHTML={{ __html: data.html }}
+              ></div>
+              {/* <div className={blogTemplateStyles.blog__shareOpt}>
+                <Share Text={true} />
+              </div> */}
+              <div className={blogTemplateStyles.blog__footer}>
+                <div className="d-flex justify-content-between">
+                  <div>
+                    <h2>Author: {data.frontmatter.author}</h2>
+                    <p>
+                      {data.frontmatter.date}.{" "}
+                      <strong>{data.frontmatter.minute_read} min read</strong>
+                    </p>
+                  </div>
+                </div>
+                <Link
+                  to={`/blog/${nextSlug}`}
+                  className={blogTemplateStyles.footer__next}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 26 26"
+                    enableBackground="new 0 0 26 26"
+                  >
+                    <path d="M23.021,12.294l-8.714-8.715l-1.414,1.414l7.007,7.008H2.687v2h17.213l-7.007,7.006l1.414,1.414l8.714-8.713  C23.411,13.317,23.411,12.685,23.021,12.294z" />
+                  </svg>
+                </Link>
+              </div>
+            </article>
+
+            <div className={blogTemplateStyles.blog__share}>
+              <Share Text={false} title={data.fields.slug} />
             </div>
-          </div>
-          <Share Text={false} title={data.fields.slug} />
-        </div>
-        <div
-          className={blogTemplateStyles.blog__body}
-          dangerouslySetInnerHTML={{ __html: data.html }}
-        ></div>
-        <div className={blogTemplateStyles.blog__shareOpt}>
-          <Share Text={true} />
-        </div>
-        <div className={blogTemplateStyles.blog__footer}>
-          <div className="d-flex justify-content-between">
-            <div>
-              <h2>By: {data.frontmatter.author}</h2>
+
+            <hr className={blogTemplateStyles.blog__hr} />
+            <div className={blogTemplateStyles.blog__more}>
+              <div>
+                <h1>What to read next</h1>
+              </div>
+              <BlogList title={data.frontmatter.title} />
+              <NewsLetter
+                callback={handleChange}
+                text={email}
+                message={message}
+                handleClick={handleClick}
+                disabled={isDisabled()}
+              />
             </div>
+            <aside></aside>
           </div>
-          <Link
-            to={`/blog/${nextSlug}`}
-            className={blogTemplateStyles.footer__next}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 26 26"
-              enableBackground="new 0 0 26 26"
-            >
-              <path d="M23.021,12.294l-8.714-8.715l-1.414,1.414l7.007,7.008H2.687v2h17.213l-7.007,7.006l1.414,1.414l8.714-8.713  C23.411,13.317,23.411,12.685,23.021,12.294z" />
-            </svg>
-          </Link>
         </div>
-      </article>
-      <hr className={blogTemplateStyles.blog__hr} />
-      <div className={blogTemplateStyles.blog__more}>
-        <div>
-          <h1>What to read next</h1>
-        </div>
-        <BlogList title={data.frontmatter.title} />
-        <NewsLetter
-          callback={handleChange}
-          text={email}
-          message={message}
-          handleClick={handleClick}
-          disabled={isDisabled()}
-        />
-      </div>
+        {/*  */}
+        {/*  */}
+      </section>
     </Layout>
   );
 }
@@ -132,6 +146,8 @@ export const getPostData = graphql`
       frontmatter {
         title
         author
+        tags
+        genres
         date(formatString: "MMMM Do, YYYY")
         minute_read
         hero_image {

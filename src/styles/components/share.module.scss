@@ -1,3 +1,6 @@
+@import "../variables";
+@import "../mixins";
+
 .share {
     width: fit-content;
     height: 54px;
@@ -22,5 +25,12 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         text-align: center;
+    }
+}
+
+.shareArea {
+    display: flex;
+    div {
+        margin: 0 10px;
     }
 }
