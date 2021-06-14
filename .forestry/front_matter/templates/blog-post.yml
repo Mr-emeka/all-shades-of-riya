@@ -55,7 +55,7 @@ fields:
       type: documents
       section: 
       file: content/data/authors.yaml
-      path: 
+      path: authors
   label: author
 pages:
 - content/posts/an-essay-on-walking.md
