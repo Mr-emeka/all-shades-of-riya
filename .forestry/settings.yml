@@ -9,7 +9,6 @@ sections:
 - type: document
   path: content/data/genres.yaml
   label: Genres
-  match: "**/*"
 - type: directory
   path: content/posts
   label: Blog Posts

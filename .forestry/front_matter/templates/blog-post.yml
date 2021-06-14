@@ -48,15 +48,15 @@ fields:
     step: 
 - name: genre
   type: select
-  default: genre
+  default: genres
   config:
-    required: true
+    required: false
     options: []
     source:
       type: documents
-      section: genre
-      file: content/data/genre.yaml
-      path: genre
+      section: genres
+      file: content/data/genres.yaml
+      path: 
   label: genre
 pages:
 - content/posts/an-essay-on-walking.md
