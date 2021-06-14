@@ -58,6 +58,9 @@ fields:
       file: content/data/genre.yaml
       path: ''
   label: genre
+  showOnly:
+    field: genre
+    value: genre
 pages:
 - content/posts/an-essay-on-walking.md
 - content/posts/ne-te-quaesiveris-extra.md
