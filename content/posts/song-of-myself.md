@@ -4,6 +4,7 @@ title: Song of Myself
 author: Chiamaka Glory
 hero_image: "../images/ren-ran-bBiuSdck8tU-unsplash.jpg"
 minute_read: 1
+genre: genres
 
 ---
 I have heard what the talkers were talking, the talk of the  
